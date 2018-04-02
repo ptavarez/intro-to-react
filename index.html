@@ -28,11 +28,15 @@
         },
 
         updateCounter: function() {
-          console.log('Stop clicking me, that hurts.')
+          this.setState({ count: this.state.count + 1 })
+          if (this.state.count === this.state.threshold) {
+            alert('You passed the threshold!')
+            this.setState({ threshold: this.state.threshold + 5 })
+          }
         },
 
         resetCounter: function() {
-          console.log('Stop clicking me, that hurts.')
+          this.setState(this.getInitialState())
         },
 
         render: function() {
