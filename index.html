@@ -17,9 +17,11 @@
     <div id="main"></div>
 
     <script type="text/babel">
+
       // create a React component
       let Counter = React.createClass({
 
+        // "this.props" object comes from the component in the ReactDOM.render function
         getInitialState: function() {
           return {
             count: 0,
@@ -27,6 +29,7 @@
           }
         },
 
+        // this function will update our counter
         updateCounter: function() {
           this.setState({ count: this.state.count + 1 })
           if (this.state.count === this.state.threshold) {
@@ -35,10 +38,13 @@
           }
         },
 
+        // reset the counter variable
         resetCounter: function() {
           this.setState(this.getInitialState())
         },
 
+        // this render function returns the elements that will be
+        // inserted into the DOM with the corresponding data
         render: function() {
           return (
             <div>
@@ -49,6 +55,7 @@
             </div>
           )
         }
+
       })
 
       // render a React component in the DOM
