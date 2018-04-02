@@ -93,7 +93,7 @@ Look at that! We rendered buttons within a div element without adding a single l
 
 Lets add two functions, one to update the counter and another to reset it.
 
-Above the render function within the **Counter** function, add the following code:
+Above the **render** function, add the following code:
 ```javascript
 updateCounter: function() { },
 
@@ -164,7 +164,7 @@ The p elements should look like this:
 
 One more thing... We need to update the **ReactDom.render** component, which is located in the bottom of the script tag.
 
-Lets add the following code:
+Lets make a quick update:
 ```javascript
 ReactDOM.render(
   <Counter threshold={5} />,
@@ -209,7 +209,7 @@ ReactDOM.render(
 ```
 ### Updating the state of our component
 
-We got some buttons showing, but they ain't really doing much huh? Lets fix that. Our goal is to update the state of our component by clicking two different buttons. When we click on the `click me` button, the count should increase by one. When we click on the `reset` button, the count should reset to it's initial state.
+We got some buttons showing, but they ain't really doing much huh? Lets fix that. Our goal is to update the state of our component by clicking two different buttons. When we click on the `click me` button, the count should increase by one. When we click on the `reset` button, the count and treshold should reset to it's initial state.
 
 We update the state of our component using the **setState** function. To update our counter, we want to not only add +1 to the counter, but also alert the user when the treshold is met. We also want to increase the treshold by 5 after the user is alerted.
 
@@ -224,7 +224,7 @@ updateCounter: function() {
 },
 ```
 
-If you click the `click me` button, your counter state should be updating! What if you want to reset without refreshing? We could do that.
+If you click the `click me` button, your counter state should be updating! What if you want to reset without refreshing the browser? We could do that.
 
 Let's add the following code to our resetCounter function:
 ```javascript
@@ -233,7 +233,7 @@ resetCounter: function() {
 },
 ```
 
-By now, you should be able to click on a button that adds one to a counter, and then reset that counter by pressing an alternative button.
+By now, you should be able to click on a button that adds +1 to a counter, and then reset that counter by pressing an alternative button.
 
 If that's not working, make sure your code looks as follows:
 ```javascript
