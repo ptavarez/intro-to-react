@@ -1,4 +1,4 @@
-# React
+# React: An Introduction
 
 React is a JavaScript library created by Facebook for easily creating user interfaces. Facebook's main reason for creating React was to solve the problem of building large applications where data changes over time.
 
@@ -13,8 +13,7 @@ This repo will cover how to include the React library in your code and how to cr
 ## Objectives
 
 By the end of this, developers should be able to:
-
--   How to include the React library in your code
+-   Include the React library in their code
 -   Explain what the Virtual DOM is and why it's important
 -   Explain what JSX is and why it's important
 -   Explain what components are
@@ -32,13 +31,13 @@ React only needs 3 scripts to be included for our web page. The first is the act
 
 By including the Babel transpiler script, and placing our code within the text/babel script tags, our JSX code will automatically be converted in the browser when we open the file.
 
-Open up the index.html file in atom to see an example of the scripts needed.
+Open up the index.html file in your favorite text-editor to see an example of the scripts needed.
 
-*(Psss... The example shown is a great way to try React but it's not suitable for production. It slowly compiles JSX with Babel in the browser and uses a large development build of React.)*
+*(Psss... The example shown is a great way to try React, but it's not suitable for production. It slowly compiles JSX with Babel in the browser and uses a large development build of React.)*
 
 ### What's JSX?
 
-Within code that uses React you may see tags that look similar to HTML tags, but they are used directly within JavaScript code. **JSX** is a JavaScript syntax extension that makes it a bit easier to create HTML tags and stacked components in large UI's.
+Within code that uses React, you may see tags that look similar to HTML tags, but they are used directly within JavaScript code. **JSX** is a JavaScript syntax extension that makes it a bit easier to create HTML tags and stacked components in large UI's.
 
 ### Virtual DOM
 
@@ -58,7 +57,7 @@ With components, there is more integration and less separation of HTML, CSS, and
 
 ## Let's Code: React Counter
 
-Now that we got a little introduction to React, it's time to get dirty by creating a simple counter! You will be introduced to several React properties such as state and render, and how to insert React components into the DOM.
+Now that we got a little introduction to React, let's get our hands dirty by creating a counter! You will be introduced to several React properties such as state and render, and how to insert React components into the DOM.
 
 If you haven't already, open up your index.html file in atom. Starter code is provided to be able to get the ball rolling and start creating a counter.
 
@@ -70,7 +69,7 @@ We'll create a button that will update a variable, and then we want the DOM to u
 
 Lets add a **render** funtion within the variable Counter. This will allow us render HTML elements on our page. We want two buttons with some words to describe what's going on.
 
-Add tthe following code:
+Add the following code:
 ```javascript
 render: function() {
   return (
