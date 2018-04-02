@@ -19,13 +19,22 @@
     <script type="text/babel">
       // create a React component
       let Counter = React.createClass({
+
+        updateCounter: function() {
+          console.log('Stop clicking me, that hurts.')
+        },
+
+        resetCounter: function() {
+          console.log('Stop clicking me, that hurts.')
+        },
+
         render: function() {
           return (
             <div>
               <p> Number of clicks: </p>
               <p> The threshold is set to: </p>
-              <button> Click me! </button>
-              <button> Reset </button>
+              <button onClick={this.updateCounter}> Click me! </button>
+              <button onClick={this.resetCounter}> Reset </button>
             </div>
           )
         }
