@@ -1,0 +1,281 @@
+# React
+
+## Prerequisites
+
+-   Familiarity with the DOM
+-   Experience with HTML
+-   Experience with javascript
+
+## Objectives
+
+By the end of this, developers should be able to:
+
+-   How to include the React library in your code
+-   Explain what the Virtual DOM is and why it's important
+-   Evaluate and write simple JSX
+-   Explain what components are
+-   Build a counter with React
+
+## Preparation
+
+1.  Fork and clone this repository.
+2.  Create a new branch, `<your-name>IsAwesome`, for your work.
+3.  Checkout to the `<your-name>IsAwesome` branch.
+
+## React Introduction
+
+React is a JavaScript library created by Facebook for easily creating user interfaces. Facebook's main reason for creating React was to solve the problem of building large applications where data changes over time.
+
+This repo will cover how to include the React library in your code and how to create a few simple components that reads data entered in by the user.
+
+## Installing React
+
+React only needs 3 scripts to be included on our web page. The first is the actual React library, the second is for React's virtual DOM, and the third is the Babel transpiler which will convert the JSX code into JavaScript so the browser can understand our code.
+
+By including the Babel transpiler script, and placing our code within the text/babel script tags, our JSX code will automatically be converted in the browser when we open the file.
+
+Open up the index.html file in atom to see an example of the scripts needed.
+
+### Note:
+
+(The example shown is a great way to try React but it's not suitable for production.
+It slowly compiles JSX with Babel in the browser and uses a large development build of React.)
+
+## What's JSX?
+
+Within code that uses React you may see tags that look similar to HTML tags, but they are used directly within JavaScript code. **JSX** is a JavaScript syntax extension that makes it a bit easier to create HTML tags and stacked components in large UI's.
+
+## Virtual DOM
+
+You should already be familiar with the DOM. The **Virtual DOM** gives us a javascript
+representation of the actual DOM. When changes are made to the view we want to
+show, we update the Virtual DOM first, which then checks the diffs between what
+was changed to what is currently rendered, and changes ONLY the pieces that need
+to be changed, rather than re-rendering the entire page. You can think about it
+like a staging area for changes that will eventually be implemented.
+
+## Components
+
+The basic unit we'll be working with in React is a **component**. Components are pieces of our application that we can define once and reuse all over the place. They're a way to modularize or compartmentalize features of our applications.
+
+With components, there is more integration and less separation of HTML, CSS, and JavaScript.
+- Instead of creating a few large files, you will organize your web app into small, reusable components that encompass their own content, presentation, and behavior.
+
+## Let's Code: React Counter
+
+Now that we got a little introduction to React, it's time to get dirty by creating a simple counter! You will be introduced to several React properties such as state and render, and how to insert React components into the DOM.
+
+If you haven't already, open up your index.html file in atom. Starter code is provided to be able to get the ball rolling and start creating a counter.
+
+### What are we doing...
+
+We'll create a button that will update a variable, and then we want the DOM to update and display the new number as well. With vanilla JavaScript (no libraries or frameworks) you would have to have create some sort of function that listens for changes to a variable and then updates the DOM with the new variables. With React, modifying data and updating the DOM becomes very easy, as you'll see it requires no extra work.
+
+### Add HTML elements via render function
+
+Lets add a **render** funtion within the variable Counter. This will allow us render HTML elements on our page. We want two buttons with some words to describe what's going on:
+
+```javascript
+render: function() {
+  return (
+    <div>
+      <p> Number of clicks: </p>
+      <p> The threshold is set to: </p>
+      <button> Click me! </button>
+      <button> Reset </button>
+    </div>
+  )
+}
+```
+
+Within this repo in your terminal, enter the following command:
+```sh
+open index.html
+```
+Look at that! We rendered buttons within a div element without adding a single line of code to it.
+
+### Update and reset the counter
+
+Lets add two functions, one to update the counter and another to reset it. Above the render function within the Counter function, add the following code:
+
+```javascript
+updateCounter: function() { },
+
+resetCounter: function() { },
+```
+
+We now need to update our buttons to invoke our functions. Modify the two buttons within the render function like so:
+
+```html
+<div>
+  <p> Number of clicks: </p>
+  <p> The threshold is set to: </p>
+  <button onClick={this.updateCounter}> Click me! </button>
+  <button onClick={this.resetCounter}> Reset </button>
+</div>
+```
+
+Our Counter function should now look like this:
+
+```javascript
+let Counter = React.createClass({
+
+  updateCounter: function() { },
+
+  resetCounter: function() { },
+
+  render: function() {
+    return (
+      <div>
+        <p> Number of clicks: </p>
+        <p> The threshold is set to: </p>
+        <button onClick={this.updateCounter}> Click me! </button>
+        <button onClick={this.resetCounter}> Reset </button>
+      </div>
+    )
+  }
+
+})
+```
+
+Checkout out your page on your browser and click them buttons. Ok... Nothing's happening. Well that's because we haven't added anything to our updateCounter or resetCounter functions yet! We'll add some code to those functions later.
+
+*(Psss... What happens if you throw in some console.logs)*
+
+### React State
+
+One of the great things about React is that we don't have to worry about updating our UI when some data changes. We can simply change the data, and React's virtual DOM will figure out what to change and how to do it efficiently. All we have to do is modify the component's state.
+
+Lets add a method called **getInitialState**, which React calls when the component is first created to setup some variables.
+
+```javascript
+getInitialState: function() {
+  return {
+    count: 0,
+    threshold: this.props.threshold
+  }
+},
+```
+Now we need to update our render function. The states being changed are within the p elements, so lets add the appropriate code. The p elements within the render function should look like this:
+
+```javascript
+<p> Number of clicks: {this.state.count} </p>
+<p> The threshold is set to: {this.state.threshold}</p>
+```
+
+One more thing... We need to update the ReactDom.render component on the bottom of the script file. Lets add the following code:
+
+```javascript
+ReactDOM.render(
+  <Counter threshold={5} />,
+  document.getElementById('main')
+)
+```
+
+Open the index.html file again... See that? We got some numbers! If you do not see any numbers, make sure your code looks like this:
+
+```javascript
+let Counter = React.createClass({
+
+  getInitialState: function() {
+    return {
+      count: 0,
+      threshold: this.props.threshold
+    }
+  },
+
+  updateCounter: function() { },
+
+  resetCounter: function() { },
+
+  render: function() {
+    return (
+      <div>
+        <p> Number of clicks: {this.state.count} </p>
+        <p> The threshold is set to: {this.state.threshold}</p>
+        <button onClick={this.updateCounter}> Click me! </button>
+        <button onClick={this.resetCounter}> Reset </button>
+      </div>
+    )
+  }
+
+})
+
+ReactDOM.render(
+  <Counter threshold={5} />,
+  document.getElementById('main')
+)
+```
+### Updating the state of our component
+
+We got some buttons showing, but they ain't really doing much huh? Lets fix that. Our goal is to update the state of our component by clicking two different buttons. When we click on the 'click me' button, the count should increase by one. When we click on the 'reset' button, the count should reset to it's initial state.
+
+We update the state of our component using the **setState** function. To update our counter, we want to not only add +1 to the counter, but also alert the user when the treshold is met. We also want to increase the treshold by 5. Lets add some code to our updateCounter function:
+```javascript
+updateCounter: function() {
+  this.setState({ count: this.state.count + 1 })
+  if (this.state.count === this.state.threshold) {
+    alert('You passed the threshold!')
+    this.setState({ threshold: this.state.threshold + 5 })
+  }
+},
+```
+
+If you click your 'click me' button, your counter state should be updating! What if you want to reset without refreshing? We could do that. Let's add the following code to our resetCounter function:
+
+```javascript
+resetCounter: function() {
+  this.setState(this.getInitialState())
+},
+```
+
+By now, you should be able to click on a button that adds one to a counter, and then reset that counter by pressing an alternative button. If it's not working for you, make sure your code looks as follows:
+
+```javascript
+let Counter = React.createClass({
+
+  getInitialState: function() {
+    return {
+      count: 0,
+      threshold: this.props.threshold
+    }
+  },
+
+  updateCounter: function() {
+    this.setState({ count: this.state.count + 1 })
+    if (this.state.count === this.state.threshold) {
+      alert('You passed the threshold!')
+      this.setState({ threshold: this.state.threshold + 5 })
+    }
+  },
+
+  resetCounter: function() {
+    this.setState(this.getInitialState())
+  },
+
+  render: function() {
+    return (
+      <div>
+        <p> Number of clicks: {this.state.count} </p>
+        <p> The threshold is set to: {this.state.threshold}</p>
+        <button onClick={this.updateCounter}> Click me! </button>
+        <button onClick={this.resetCounter}> Reset </button>
+      </div>
+    )
+  }
+
+})
+
+ReactDOM.render(
+  <Counter threshold={5} />,
+  document.getElementById('main')
+)
+```
+
+## Conclusion
+
+Congratulations... You just created a web page with Reactjs! The beauty of the above component is that all we have to manage is what the data is initially, and how it's updated. The DOM is updated automatically for us once the data, or state, changes.
+
+### Further Learning
+
+If you found this interesting and want to dive in a little deeper, go to Reactjs' website and follow their intro to react [tutorial](https://reactjs.org/tutorial/tutorial.html). The tutorial teaches you how to build a React app using `create-react-app`. Create React App is a tool built by developers at Facebook to help you build React applications. It saves you from time-consuming setup and configuration. You simply run one command and create react app sets up the tools you need to start your React project!

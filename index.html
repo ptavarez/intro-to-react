@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My React Counter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  </head>
+  <body>
+    <h1>My React Counter</h1>
+    <div id="main"></div>
+    <script type="text/babel">
+
+    // React component
+    let Counter = React.createClass({
+
+      getInitialState: function() {
+        return {
+          count: 0,
+          threshold: this.props.threshold
+        }
+      },
+
+      updateCounter: function() {
+        this.setState({ count: this.state.count + 1 })
+        if (this.state.count === this.state.threshold) {
+          alert('You passed the threshold!')
+          this.setState({ threshold: this.state.threshold + 5 })
+        }
+      },
+
+      resetCounter: function() {
+        this.setState(this.getInitialState())
+      },
+
+      render: function() {
+        return (
+          <div>
+            <p> Number of clicks: {this.state.count} </p>
+            <p> The threshold is set to: {this.state.threshold}</p>
+            <button onClick={this.updateCounter}> Click me! </button>
+            <button onClick={this.resetCounter}> Reset </button>
+          </div>
+        )
+      }
+
+    })
+
+    ReactDOM.render(
+      <Counter threshold={5} />,
+      document.getElementById('main')
+    )
+
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      To set up a production-ready React build environment, follow these instructions:
+      * https://reactjs.org/docs/add-react-to-a-new-app.html
+      * https://reactjs.org/docs/add-react-to-an-existing-app.html
+
+      You can also use React without JSX, in which case you can remove Babel:
+      * https://reactjs.org/docs/react-without-jsx.html
+      * https://reactjs.org/docs/cdn-links.html
+    -->
+  </body>
+</html>
