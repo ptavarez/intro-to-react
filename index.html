@@ -19,7 +19,16 @@
     <script type="text/babel">
       // create a React component
       let Counter = React.createClass({
-        // methods go here...
+        render: function() {
+          return (
+            <div>
+              <p> Number of clicks: </p>
+              <p> The threshold is set to: </p>
+              <button> Click me! </button>
+              <button> Reset </button>
+            </div>
+          )
+        }
       })
 
       // render a React component in the DOM
