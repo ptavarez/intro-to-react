@@ -139,7 +139,7 @@ Checkout out your page on your browser and click them buttons. Ok... Nothing's h
 
 (*Psss... What happens if you throw in some console.logs in these functions* :eyes:)
 
-### React State
+## React State
 
 One of the great things about React is that we don't have to worry about updating our UI when some data changes. We can simply change the data, and React's virtual DOM will figure out what to change and how to do it efficiently. All we have to do is modify the component's state.
 
