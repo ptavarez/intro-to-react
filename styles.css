@@ -1,0 +1,21 @@
+* {
+  background-color: #001f3f;
+  color: #7FDBFF;
+  font-family: "Lucida Console", Monaco, monospace;
+  text-align: center;
+}
+
+button {
+  padding: 5px;
+  margin: 10px;
+}
+
+p {
+  color: ;
+}
+
+.main {
+  border: 3px solid black;
+  margin: 0 auto;
+  width: 25%;
+}

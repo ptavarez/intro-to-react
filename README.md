@@ -33,7 +33,7 @@ By the end of this, developers should be able to:
 
 React only needs 3 scripts to be included for our web page. The first is the actual React library, the second is for React's virtual DOM, and the third is the Babel transpiler which will convert the JSX code into JavaScript so the browser can understand our code.
 
-By including the Babel transpiler script, and placing our code within the text/babel script tags, our JSX code will automatically be converted in the browser when we open the file.
+By including the Babel transpiler script and placing our code within the text/babel script tags, our JSX code will automatically be converted in the browser when we open the file.
 
 Open up the index.html file in your favorite text-editor to see an example of the scripts needed.
 
@@ -47,31 +47,31 @@ Within code that uses React, you may see tags that look similar to HTML tags, bu
 
 You should already be familiar with the DOM. The **Virtual DOM** gives us a javascript
 representation of the actual DOM. When changes are made to the view we want to
-show, we update the Virtual DOM first, which then checks the diffs between what
+show, we update the Virtual DOM first, which then checks the difference between what
 was changed to what is currently rendered, and changes ONLY the pieces that need
-to be changed, rather than re-rendering the entire page. You can think about it
+to be changed rather than re-rendering the entire page. You can think about it
 like a staging area for changes that will eventually be implemented.
 
 ### Components
 
-The basic unit we'll be working with in React is a **component**. Components are pieces of our application that we can define once and reuse all over the place. They're a way to modularize or compartmentalize features of our applications.
+The basic unit we'll be working with in React is a **component**. Components are pieces of an application that we can define once and reuse all over the place. They're a way to modularize or compartmentalize features of our applications.
 
 With components, there is more integration and less separation of HTML, CSS, and JavaScript.
-- Instead of creating a few large files, you will organize your web app into small, reusable components that encompass their own content, presentation, and behavior.
+- Instead of creating a few large files, you would organize your web app into small, reusable components that encompass their own content, presentation, and behavior.
 
 ## Let's Code: React Counter
 
 Now that we got a little introduction to React, let's get our hands dirty by creating a counter! You will be introduced to several React properties such as state and render, and how to insert React components into the DOM.
 
-If you haven't already, open up your index.html file in atom. Starter code is provided to be able to get the ball rolling and start creating a counter.
+If you haven't already, open up your index.html file in a text editor. Starter code is provided to get the ball rolling :grin:
 
 ### What are we doing?
 
-We'll create a button that will update a variable, and then we want the DOM to update and display the new number as well. With vanilla JavaScript (no libraries or frameworks) you would have to create some sort of function that listens for changes to a variable and then updates the DOM with the new variables. With React, modifying data and updating the DOM becomes very easy, as you'll see it requires no extra work.
+We'll create a button that will update a variable and the DOM to display a new number. With vanilla JavaScript (no libraries or frameworks) we'll have to create some sort of function that listens for changes to a variable and then updates the DOM with the new variables. With React, modifying data and updating the DOM becomes very easy, as we'll see it requires no extra work.
 
 ### Add HTML elements via render function
 
-Lets add a **render** funtion within the variable Counter. This will allow us render HTML elements on our page. We want two buttons with some words to describe what's going on.
+Lets add a **render** funtion within the Counter component. This will allow us to render HTML elements on our page. We want two buttons with some words to describe what's going on.
 
 Add the following code:
 ```javascript
@@ -87,7 +87,7 @@ render: function() {
 }
 ```
 
-Within this repo in your terminal, enter the following command:
+In your terminal, enter the following command:
 ```sh
 open index.html
 ```
@@ -104,7 +104,7 @@ updateCounter: function() { },
 resetCounter: function() { },
 ```
 
-We now need to update our buttons to invoke our functions.
+We now need to update our buttons to listen for a click by a user to invoke our new functions.
 
 Modify the two buttons within the **render** function like so:
 ```html
@@ -116,7 +116,7 @@ Modify the two buttons within the **render** function like so:
 </div>
 ```
 
-Our **Counter** function should now look like this:
+Our **Counter** component should now look like this:
 
 ```javascript
 let Counter = React.createClass({
@@ -145,7 +145,7 @@ Checkout out your page on your browser and click them buttons. Ok... Nothing's h
 
 ## React State
 
-One of the great things about React is that we don't have to worry about updating our UI when some data changes. We can simply change the data, and React's virtual DOM will figure out what to change and how to do it efficiently. All we have to do is modify the component's state.
+One of the great things about React is that we don't have to worry about updating our UI when data changes. We can simply change the data, and React's virtual DOM will figure out what to change and how to do it efficiently. All we have to do is modify the component's state.
 
 Lets add a method called **getInitialState**, which React calls when the component is first created to setup some variables.
 
@@ -178,39 +178,6 @@ ReactDOM.render(
 
 Open the index.html file again... See that? We got some numbers!
 
-If you do not see any numbers, make sure your code looks like this:
-```javascript
-let Counter = React.createClass({
-
-  getInitialState: function() {
-    return {
-      count: 0,
-      threshold: this.props.threshold
-    }
-  },
-
-  updateCounter: function() { },
-
-  resetCounter: function() { },
-
-  render: function() {
-    return (
-      <div>
-        <p> Number of clicks: {this.state.count} </p>
-        <p> The threshold is set to: {this.state.threshold}</p>
-        <button onClick={this.updateCounter}> Click me! </button>
-        <button onClick={this.resetCounter}> Reset </button>
-      </div>
-    )
-  }
-
-})
-
-ReactDOM.render(
-  <Counter threshold={5} />,
-  document.getElementById('main')
-)
-```
 ### Updating the state of our component
 
 We got some buttons showing, but they ain't really doing much huh? Lets fix that. Our goal is to update the state of our component by clicking two different buttons. When we click on the `click me` button, the count should increase by one. When we click on the `reset` button, the count and treshold should reset to it's initial state.
@@ -287,7 +254,11 @@ Congratulations... You just created a web page with Reactjs! The beauty of the a
 
 ### Further Learning
 
+<<<<<<< HEAD
 If you found this interesting and want to dive in a little deeper, go to Reactjs' website and follow their intro to react [tutorial](https://reactjs.org/tutorial/tutorial.html). The tutorial teaches you how to build a React app using `create-react-app`. Create React App is a tool built by developers at Facebook to help you build React applications. It saves you from time-consuming setup and configuration. You simply run one command and create react app sets up the tools you need to start your React project!
+=======
+If you found this interesting and want to dive in a little deeper, go to Reactjs' website and follow their intro to react [tutorial](https://reactjs.org/tutorial/tutorial.html). The tutorial teaches you how to build a React app using *Create React App*. *Create React App* is a tool built by developers at Facebook to help you build React applications. It saves you from time-consuming setup and configuration. You simply run one command and create react app sets up the tools you need to start your React project!
+>>>>>>> master
 
 ### References
 
