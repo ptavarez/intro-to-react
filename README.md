@@ -87,7 +87,7 @@ Within this repo in your terminal, enter the following command:
 ```sh
 open index.html
 ```
-Look at that! We rendered buttons within a div element without adding a single line of code to it.
+Look at that! We rendered buttons within a div element without adding a single line of code to it. If your browser didn't open, find the **index.html** file, right click, and hit `Open With` to then select your favorite browser. 
 
 ### Update and reset the counter
 
