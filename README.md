@@ -284,3 +284,9 @@ Congratulations... You just created a web page with Reactjs! The beauty of the a
 ### Further Learning
 
 If you found this interesting and want to dive in a little deeper, go to Reactjs' website and follow their intro to react [tutorial](https://reactjs.org/tutorial/tutorial.html). The tutorial teaches you how to build a React app using `create-react-app`. Create React App is a tool built by developers at Facebook to help you build React applications. It saves you from time-consuming setup and configuration. You simply run one command and create react app sets up the tools you need to start your React project!
+
+### References
+
+This tutorial was inspired by the following sites:
+[General Assembly's React Repo](https://git.generalassemb.ly/ga-wdi-boston/react)
+[Coderbyte's Introduction to React](https://coderbyte.com/tutorial/introduction-to-react)
