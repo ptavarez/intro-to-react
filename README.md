@@ -1,5 +1,5 @@
-[logo]: http://res.cloudinary.com/ptavarez/image/upload/v1522767779/react-logo.png "React"
-![React](https://reactjs.org/)
+[![logo](http://res.cloudinary.com/ptavarez/image/upload/v1522767779/react-logo.png)]
+(https://reactjs.org/)
 
 # Dro's Introduction To React
 
