@@ -1,5 +1,5 @@
 <p align="center">
- src="http://res.cloudinary.com/ptavarez/image/upload/c_scale,w_336/v1522767779/react-logo.png" alt="ReactJs"/>
+  <img src="http://res.cloudinary.com/ptavarez/image/upload/c_scale,w_336/v1522767779/react-logo.png" alt="React"/>
 </p>
 
 # Dro's Introduction To React
