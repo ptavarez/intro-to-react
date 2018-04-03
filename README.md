@@ -1,4 +1,4 @@
-# React: An Introduction
+# Dro's Introduction To React
 
 React is a JavaScript library created by Facebook for easily creating user interfaces. Facebook's main reason for creating React was to solve the problem of building large applications where data changes over time.
 
