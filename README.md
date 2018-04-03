@@ -288,5 +288,5 @@ If you found this interesting and want to dive in a little deeper, go to Reactjs
 ### References
 
 This tutorial was inspired by the following sites:
-[General Assembly's React Repo](https://git.generalassemb.ly/ga-wdi-boston/react)
-[Coderbyte's Introduction to React](https://coderbyte.com/tutorial/introduction-to-react)
+- [General Assembly's React Repo](https://git.generalassemb.ly/ga-wdi-boston/react)
+- [Coderbyte's Introduction to React](https://coderbyte.com/tutorial/introduction-to-react)
