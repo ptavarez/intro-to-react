@@ -1,4 +1,4 @@
-[![Logo](http://res.cloudinary.com/ptavarez/image/upload/v1522767779/react-logo.png)](https://reactjs.org/)
+[![Logo](http://res.cloudinary.com/ptavarez/image/upload/c_scale,w_564/v1522767779/react-logo.png)](https://reactjs.org/)
 
 # Dro's Introduction To React
 
