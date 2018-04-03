@@ -1,3 +1,5 @@
+[![Logo](http://res.cloudinary.com/ptavarez/image/upload/v1522767779/react-logo.png)](https://reactjs.org/)
+
 # Dro's Introduction To React
 
 React is a JavaScript library created by Facebook for easily creating user interfaces. Facebook's main reason for creating React was to solve the problem of building large applications where data changes over time.
@@ -87,7 +89,7 @@ Within this repo in your terminal, enter the following command:
 ```sh
 open index.html
 ```
-Look at that! We rendered buttons within a div element without adding a single line of code to it. If your browser didn't open, find the **index.html** file, right click, and hit `Open With` to then select your favorite browser. 
+Look at that! We rendered buttons within a div element without adding a single line of code to it. If your browser didn't open, find the **index.html** file, right click, and hit `Open With` to then select your favorite browser.
 
 ### Update and reset the counter
 
