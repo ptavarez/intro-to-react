@@ -1,6 +1,6 @@
-<a align="center">
-  <img href="https://reactjs.org/" src="http://res.cloudinary.com/ptavarez/image/upload/c_scale,w_336/v1522767779/react-logo.png" alt="ReactJs"/>
-</a>
+<p align="center">
+ src="http://res.cloudinary.com/ptavarez/image/upload/c_scale,w_336/v1522767779/react-logo.png" alt="ReactJs"/>
+</p>
 
 # Dro's Introduction To React
 
